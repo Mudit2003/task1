@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "763911878615",
+    "project_id": "avid-health-care",
+    "storage_bucket": "avid-health-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763911878615:android:0ff02d92e3abca5ca07d92",
+        "android_client_info": {
+          "package_name": "com.example.task1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu3tT0UT2b9me7Qkbd80lBodmRbPIUq9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
