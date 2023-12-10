@@ -50,8 +50,8 @@ class AppDimensions {
   static EdgeInsets get widgetPadding => EdgeInsets.fromLTRB(
         10 * _widthScaleFactor,
         16 * _heightScaleFactor,
-        16 * _widthScaleFactor,
-        16 * _heightScaleFactor,
+        12 * _widthScaleFactor,
+        12 * _heightScaleFactor,
       );
 
   static double get radius => 5 * _textScaleFactor;
@@ -64,7 +64,7 @@ class AppDimensions {
   static double get circularContainerWidth2 => 56 * _widthScaleFactor;
   static double get circularContainerHeight2 => 56 * _heightScaleFactor;
 
-  static double get largeTextSize => 19 * _textScaleFactor;
+  static double get largeTextSize => 20 * _textScaleFactor;
   static double get smallTextSize => 12 * _textScaleFactor;
   static double get mediumTextSize => 16 * _textScaleFactor;
   static double get buttonTextSize => 14 * _textScaleFactor;
@@ -83,8 +83,8 @@ class AppDimensions {
   static double get customTextButtonHeight => 33.0 * _heightScaleFactor;
   static double get customTextButtonWidth => 108.09 * _widthScaleFactor;
 
-  static double get singleTileContainerHeight => 185 * _heightScaleFactor;
   static double get communityBannerHeight => 136 * _heightScaleFactor;
+  static double get singleTileContainerHeight => 185 * _heightScaleFactor;
 
   static double get doubleTileContainerHeight => 204 * _heightScaleFactor;
   static double get doubleTileContainerWidth => 169 * _widthScaleFactor;
@@ -117,7 +117,7 @@ class AppDimensions {
 // spacing
   static double get verticalSpace3 => 36 * _heightScaleFactor;
   static double get verticalSpace1 => 15 * _heightScaleFactor;
-  static double get verticalSpace2 => 22 * _heightScaleFactor;
+  static double get verticalSpace2 => 19 * _heightScaleFactor;
   static double get horizontalSpace2 => 8 * _widthScaleFactor;
   static double get horizontalSpace1 => 2 * _widthScaleFactor;
 
@@ -127,4 +127,9 @@ class AppDimensions {
 
   // search bar text field with and height
   static double get searchBarWidth => maxUsableWidth - circularContainerWidth1;
+
+  // search result container
+  static double get searchResultTileHeight => 84 * _heightScaleFactor;
+
+  static double get searchScrollViewHeight => 330 * _heightScaleFactor;
 }

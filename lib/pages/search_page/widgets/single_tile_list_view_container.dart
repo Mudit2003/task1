@@ -4,9 +4,9 @@ import 'package:task1/common/modals/person.dart';
 import 'package:task1/common/services/cloud_services.dart';
 import 'package:task1/common/utils/colors.dart';
 import 'package:task1/common/utils/dimensions.dart';
-import 'package:task1/pages/search_page/widgets/image_circle.dart';
+import 'package:task1/common/widgets/image_circle.dart';
+import 'package:task1/common/widgets/location_text_widget.dart';
 import 'package:task1/pages/search_page/widgets/large_bold_text.dart';
-import 'package:task1/pages/search_page/widgets/location_text_widget.dart';
 import 'package:task1/pages/search_page/widgets/small_text.dart';
 import 'package:task1/pages/search_page/widgets/text_and_textButton.dart';
 
@@ -115,7 +115,7 @@ class _DonationRequestsState extends State<DonationRequests> {
                         ),
                       ),
                       SizedBox(
-                        height: AppDimensions.verticalSpace2,
+                        height: AppDimensions.verticalSpace1,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

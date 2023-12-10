@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task1/common/utils/colors.dart';
 import 'package:task1/common/utils/dimensions.dart';
+import 'package:task1/common/widgets/image_circle.dart';
 import 'package:task1/common/widgets/large_text.dart';
-import 'package:task1/pages/search_page/widgets/image_circle.dart';
 import 'package:task1/pages/search_page/widgets/underlined_text_button.dart';
 
 class HeaderRow extends StatelessWidget {

@@ -13,12 +13,16 @@ class ImageCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: AppDimensions.appPadding,
-      width: imageRadius < 50
-          ? AppDimensions.circularContainerWidth1
-          : AppDimensions.circularContainerWidth2,
-      height: imageRadius < 50
-          ? AppDimensions.circularContainerHeight1
-          : AppDimensions.circularContainerHeight2,
+      width: imageRadius < 100
+          ? (imageRadius < 50
+              ? AppDimensions.circularContainerWidth1
+              : AppDimensions.circularContainerWidth2)
+          : AppDimensions.circularContainerWidth2 * 2,
+      height: imageRadius < 100
+          ? (imageRadius < 50
+              ? AppDimensions.circularContainerHeight1
+              : AppDimensions.circularContainerHeight2)
+          : AppDimensions.circularContainerHeight2 * 2,
       decoration: ShapeDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),

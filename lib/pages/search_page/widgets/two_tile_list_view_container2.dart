@@ -5,8 +5,8 @@ import 'package:task1/common/services/cloud_services.dart';
 import 'package:task1/common/utils/colors.dart';
 import 'package:task1/common/utils/dimensions.dart';
 import 'package:task1/common/widgets/custom_text_button.dart';
-import 'package:task1/pages/search_page/widgets/location_text_widget.dart';
-import 'package:task1/pages/search_page/widgets/medium_text.dart';
+import 'package:task1/common/widgets/location_text_widget.dart';
+import 'package:task1/common/widgets/medium_text.dart';
 import 'package:task1/pages/search_page/widgets/text_and_textButton.dart';
 
 class BloodBanksList extends StatefulWidget {

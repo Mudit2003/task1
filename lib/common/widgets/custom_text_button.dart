@@ -25,7 +25,7 @@ class CustomTextButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: AppDimensions.customTextButtonWidth,
+        width: width,
         height: AppDimensions.customTextButtonHeight,
         decoration: ShapeDecoration(
           color: fill,

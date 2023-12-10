@@ -5,9 +5,10 @@ import 'package:task1/common/services/cloud_services.dart';
 import 'package:task1/common/utils/colors.dart';
 import 'package:task1/common/utils/dimensions.dart';
 import 'package:task1/common/widgets/custom_text_button.dart';
-import 'package:task1/pages/search_page/widgets/image_circle.dart';
-import 'package:task1/pages/search_page/widgets/location_text_widget.dart';
-import 'package:task1/pages/search_page/widgets/medium_text.dart';
+import 'package:task1/common/widgets/image_circle.dart';
+import 'package:task1/common/widgets/location_text_widget.dart';
+import 'package:task1/common/widgets/medium_text.dart';
+import 'package:task1/pages/search_for_donors/widgets/availability.dart';
 import 'package:task1/pages/search_page/widgets/text_and_textButton.dart';
 
 class NearbyDonors extends StatefulWidget {
@@ -32,7 +33,7 @@ class _NearbyDonorsState extends State<NearbyDonors> {
               button: "See All",
             ),
             SizedBox(
-              height: AppDimensions.verticalSpace3 / 2,
+              height: AppDimensions.verticalSpace1,
             ),
             Expanded(
               child: ListView.separated(
@@ -67,7 +68,8 @@ class _NearbyDonorsState extends State<NearbyDonors> {
                       children: [
                         Expanded(
                           child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Column(
@@ -92,21 +94,12 @@ class _NearbyDonorsState extends State<NearbyDonors> {
                                     ),
                                   ),
                                   const LocationText(location: "Bandra Mumbai"),
-                                  Text(
-                                    person.isAvailableForDonation
-                                        ? "AVAILABLE"
-                                        : "UNAVAILABLE",
-                                    style: TextStyle(
-                                      color: person.isAvailableForDonation
-                                          ? AppColors.greenTextColor
-                                          : AppColors.greyTextColor1,
-                                      fontSize: AppDimensions.buttonTextSize,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: person.isAvailableForDonation
-                                          ? FontWeight.w500
-                                          : FontWeight.w300,
-                                    ),
-                                  )
+                                  FittedBox(
+                                    fit: BoxFit.contain,
+                                    child: Availability(
+                                        available:
+                                            person.isAvailableForDonation),
+                                  ),
                                 ],
                               ),
                               Column(
@@ -130,7 +123,7 @@ class _NearbyDonorsState extends State<NearbyDonors> {
                           ),
                         ),
                         SizedBox(
-                          height: AppDimensions.verticalSpace1,
+                          height: AppDimensions.verticalSpace2,
                         ),
                         CustomTextButton(
                           text: "Request",

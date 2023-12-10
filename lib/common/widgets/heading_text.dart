@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task1/common/utils/colors.dart';
-import 'package:task1/common/utils/dimensions.dart';
 
 class HeadingText extends StatelessWidget {
   final String text;
