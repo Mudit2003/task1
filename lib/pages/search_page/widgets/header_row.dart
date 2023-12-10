@@ -14,7 +14,7 @@ class HeaderRow extends StatelessWidget {
         "Header rebuilt ${AppDimensions.circularContainerHeight1} , ${AppDimensions.screenHeight}");
 
     return Container(
-      height: AppDimensions.circularContainerHeight1 * 13 / 12,
+      height: AppDimensions.circularContainerHeight1 * 14 / 12,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -26,16 +26,14 @@ class HeaderRow extends StatelessWidget {
               SizedBox(width: AppDimensions.horizontalSpace1),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   LargeSemiBoldText(
                     text: "Hello Mudit!",
                   ),
-                  Expanded(
-                    child: UnderlinedTextButton(
-                        size: AppDimensions.smallTextSize,
-                        text: "Complete your profile to donate blood "),
-                  ),
+                  UnderlinedTextButton(
+                      size: AppDimensions.smallTextSize,
+                      text: "Complete your profile to donate blood "),
                 ],
               ),
             ],

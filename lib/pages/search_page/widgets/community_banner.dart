@@ -16,6 +16,7 @@ class CommunityBanner extends StatelessWidget {
         color: AppColors.whiteFillColor1,
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             height: AppDimensions.imageEllipsHeight,
@@ -31,6 +32,7 @@ class CommunityBanner extends StatelessWidget {
             ),
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
                 width: AppDimensions.communityTextWidth,

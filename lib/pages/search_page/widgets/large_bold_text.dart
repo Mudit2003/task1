@@ -20,7 +20,6 @@ class LargeBoldText extends StatelessWidget {
         fontSize: AppDimensions.largeTextSize,
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w700,
-        height: 0,
       ),
     );
   }

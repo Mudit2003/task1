@@ -39,6 +39,7 @@ class ButtonGrid extends StatelessWidget {
               fill: stateController.activeIndexGridViewButton.value == index
                   ? AppColors.redIconColor
                   : AppColors.whiteFillColor1,
+              elevated: false,
             ),
           );
         },

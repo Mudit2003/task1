@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:task1/common/modals/person.dart';
+import 'package:task1/common/services/cloud_services.dart';
 import 'package:task1/common/utils/colors.dart';
 import 'package:task1/common/utils/dimensions.dart';
 import 'package:task1/pages/search_page/widgets/image_circle.dart';
@@ -8,16 +10,17 @@ import 'package:task1/pages/search_page/widgets/location_text_widget.dart';
 import 'package:task1/pages/search_page/widgets/small_text.dart';
 import 'package:task1/pages/search_page/widgets/text_and_textButton.dart';
 
-class SingleTileListView extends StatefulWidget {
+class DonationRequests extends StatefulWidget {
   // will take a List<Modals> as parameters and display it
-  const SingleTileListView({super.key});
+  const DonationRequests({super.key});
 
   @override
-  State<SingleTileListView> createState() => _SingleTileListViewState();
+  State<DonationRequests> createState() => _DonationRequestsState();
 }
 
-class _SingleTileListViewState extends State<SingleTileListView> {
-  Iterable<Person> list = [];
+class _DonationRequestsState extends State<DonationRequests> {
+  // logic of popping is still pending, will require removing from database
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -28,71 +31,124 @@ class _SingleTileListViewState extends State<SingleTileListView> {
             text: "Donation Requests",
             button: "See All",
           ),
+          SizedBox(
+            height: AppDimensions.verticalSpace3 / 2,
+          ),
           Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Container(
-                  width: AppDimensions.maxUsableWidth,
-                  padding: AppDimensions.widgetPadding,
-                  decoration: BoxDecoration(
-                      color: AppColors.whiteFillColor1,
-                      borderRadius: BorderRadius.circular(AppDimensions.radius),
-                      border: Border.all(
-                        color: AppColors.blackTextColor1,
-                      )),
-                  // height: AppDimensions.singleTileContainerHeight,
-                  child: Column(children: [
-                    Row(
-                      children: [
-                        const ImageCircle(imageRadius: 56),
-                        Column(
+            child: FutureBuilder(
+              future: CloudService().getAllUser(),
+              builder: (context, snapshot) => ListView.builder(
+                itemBuilder: (context, index) {
+                  final Person person = snapshot.data?.elementAt(index) ??
+                      Person(
+                        phoneNumber: 111111111,
+                        isAvailableForDonation: false,
+                        gender: "Male",
+                        name: "Benaam",
+                        date: Timestamp.fromDate(DateTime(2003)),
+                        location: "",
+                        bloodType: "AB+",
+                      );
+                  return Container(
+                    width: AppDimensions.maxUsableWidth,
+                    padding: AppDimensions.widgetPadding,
+                    decoration: BoxDecoration(
+                        color: AppColors.whiteFillColor1,
+                        borderRadius:
+                            BorderRadius.circular(AppDimensions.radius),
+                        border: Border.all(
+                          color: AppColors.blackTextColor1,
+                        )),
+                    // height: AppDimensions.singleTileContainerHeight,
+                    child: Column(children: [
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              'Rahul Sen',
-                              style: TextStyle(
-                                color: AppColors.blackTextColor1,
-                                fontSize: AppDimensions.mediumTextSize,
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w500,
-                              ),
+                            const ImageCircle(imageRadius: 56),
+                            SizedBox(
+                              width: 2 * AppDimensions.horizontalSpace1,
                             ),
-                            const LocationText(location: "Bandra Mumbai"),
-                            const SmallText(text: "Date:20th Jan, 2023"),
+                            Expanded(
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          person.name,
+                                          style: TextStyle(
+                                            color: AppColors.blackTextColor1,
+                                            fontSize:
+                                                AppDimensions.mediumTextSize,
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                        const LocationText(
+                                            location: "Bandra Mumbai"),
+                                        SmallText(
+                                            text:
+                                                "Date:${person.date.toDate().toString()}"),
+                                      ],
+                                    ),
+                                    Column(
+                                      // crossAxisAlignment: CrossAxisAlignment.end,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        LargeBoldText(
+                                          text: person.bloodType,
+                                          color: AppColors.redIconColor,
+                                        ),
+                                        SmallText(text: "Blood required"),
+                                      ],
+                                    )
+                                  ]),
+                            )
                           ],
                         ),
-                        const Column(
-                          children: [
-                            LargeBoldText(
-                              text: "AB+",
-                              color: AppColors.redIconColor,
-                            ),
-                            SmallText(text: "Blood required"),
-                          ],
-                        )
-                      ],
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Row(
+                      ),
+                      SizedBox(
+                        height: AppDimensions.verticalSpace2,
+                      ),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          LargeBoldText(
-                            text: "Decline",
-                            color: AppColors.blackTextColor1.withOpacity(0.7),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Decline",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.blackTextColor1,
+                                fontSize: AppDimensions.largeTextSize,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
                           ),
-                          const LargeBoldText(
-                            text: "Accept",
-                            color: AppColors.redIconColor,
+                          TextButton(
+                            onPressed: () {},
+                            child: LargeBoldText(
+                              text: "Accept",
+                              color: AppColors.redIconColor,
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                  ]),
-                );
-              },
-              shrinkWrap: true,
-              itemCount: 10,
-              scrollDirection: Axis.horizontal,
+                    ]),
+                  );
+                },
+                shrinkWrap: true,
+                itemCount: snapshot.data?.length ?? 0,
+                scrollDirection: Axis.horizontal,
+              ),
             ),
           ),
         ],

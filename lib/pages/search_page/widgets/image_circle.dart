@@ -21,7 +21,7 @@ class ImageCircle extends StatelessWidget {
           : AppDimensions.circularContainerHeight2,
       decoration: ShapeDecoration(
         image: DecorationImage(
-          image: NetworkImage(imagePath),
+          image: AssetImage(imagePath),
           fit: BoxFit.cover,
         ),
         shape: OvalBorder(),

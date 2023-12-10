@@ -47,10 +47,11 @@ class AppDimensions {
         vertical: 30 * _heightScaleFactor,
       );
 
-  static EdgeInsetsDirectional get widgetPadding =>
-      EdgeInsetsDirectional.symmetric(
-        horizontal: _widthScaleFactor,
-        vertical: _heightScaleFactor,
+  static EdgeInsets get widgetPadding => EdgeInsets.fromLTRB(
+        10 * _widthScaleFactor,
+        16 * _heightScaleFactor,
+        16 * _widthScaleFactor,
+        16 * _heightScaleFactor,
       );
 
   static double get radius => 5 * _textScaleFactor;
@@ -68,6 +69,7 @@ class AppDimensions {
   static double get mediumTextSize => 16 * _textScaleFactor;
   static double get buttonTextSize => 14 * _textScaleFactor;
   static double get verySmallTextSize => 8 * _textScaleFactor;
+  static double get distanceTextSize => 10 * _textScaleFactor;
 
   static double get textAndIconButtonHeight => 46 * _heightScaleFactor;
   static double get textAndIconButtonWidth => 169 * _widthScaleFactor;
@@ -110,9 +112,19 @@ class AppDimensions {
         vertical: 4 * _heightScaleFactor,
         horizontal: 4 * _widthScaleFactor,
       );
-
+// circular container border
   static double get circularBorderWidth => 3.0 * _textScaleFactor;
+// spacing
+  static double get verticalSpace3 => 36 * _heightScaleFactor;
+  static double get verticalSpace1 => 15 * _heightScaleFactor;
+  static double get verticalSpace2 => 22 * _heightScaleFactor;
+  static double get horizontalSpace2 => 8 * _widthScaleFactor;
+  static double get horizontalSpace1 => 2 * _widthScaleFactor;
 
-  static double get verticalSpace1 => 35 * _heightScaleFactor;
-  static double get horizontalSpace1 => 8 * _widthScaleFactor;
+  // app icon container height and width
+  static double get iconContainerWidth => 54 * _widthScaleFactor;
+  static double get iconContainerHeight => 54 * _heightScaleFactor;
+
+  // search bar text field with and height
+  static double get searchBarWidth => maxUsableWidth - circularContainerWidth1;
 }

@@ -1,13 +1,32 @@
 {
   "project_info": {
-    "project_number": "763911878615",
-    "project_id": "avid-health-care",
-    "storage_bucket": "avid-health-care.appspot.com"
+    "project_number": "609491543675",
+    "project_id": "aviz-18397",
+    "storage_bucket": "aviz-18397.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:763911878615:android:0ff02d92e3abca5ca07d92",
+        "mobilesdk_app_id": "1:609491543675:android:f56adbc9114faf20ebe4de",
+        "android_client_info": {
+          "package_name": "com.example.aviz_healthcare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI0N_PgIHJnC5Qh1Oe1hLFOXk8AaePv4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609491543675:android:e48704b4c4849659ebe4de",
         "android_client_info": {
           "package_name": "com.example.task1"
         }
@@ -15,7 +34,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBu3tT0UT2b9me7Qkbd80lBodmRbPIUq9w"
+          "current_key": "AIzaSyBI0N_PgIHJnC5Qh1Oe1hLFOXk8AaePv4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609491543675:android:f117b17c27d894f8ebe4de",
+        "android_client_info": {
+          "package_name": "com.kunjsapplication.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI0N_PgIHJnC5Qh1Oe1hLFOXk8AaePv4k"
         }
       ],
       "services": {

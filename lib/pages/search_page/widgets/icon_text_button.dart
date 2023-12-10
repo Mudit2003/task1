@@ -15,7 +15,6 @@ class IconTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: AppDimensions.widgetPadding,
       width: AppDimensions.textAndIconButtonWidth,
       height: AppDimensions.textAndIconButtonHeight,
       decoration: BoxDecoration(

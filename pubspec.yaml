@@ -93,6 +93,7 @@ flutter:
           weight: 700
         - asset: assets/fonts/poppins/Poppins-Light.otf
           weight: 300
+          
     - family: CustomIcons
       fonts:
         - asset: assets/fonts/icons/CustomIcons.ttf

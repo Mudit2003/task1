@@ -12,7 +12,7 @@ class CustomSearchBar extends StatelessWidget {
     return Container(
         width: AppDimensions.maxUsableWidth,
         height: AppDimensions.customTextButtonHeight,
-        padding: AppDimensions.widgetPadding,
+        // padding: AppDimensions.,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(
               AppDimensions.radius3,
@@ -21,13 +21,15 @@ class CustomSearchBar extends StatelessWidget {
         child: Row(
           children: [
             Container(
+              padding: AppDimensions.textButtonInactivePadding,
               child: Icon(
                 Icons.search,
                 color: AppColors.redIconColor,
                 size: AppDimensions.iconSize2,
               ),
             ),
-            Expanded(
+            Container(
+              width: AppDimensions.searchBarWidth,
               child: TextField(
                 controller: stateController.searchBarEditingController,
                 // expands: true,

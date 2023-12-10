@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    AppDimensions.init(MediaQuery.of(context).size);
+    AppDimensions.update(MediaQuery.of(context).size);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppRoutes.routes,
-      initialRoute: AppRoutes.getResponsiveHome(),
+      initialRoute: AppRoutes.getSearcForDonorsRoute(),
       initialBinding: ControllerBinding(),
     );
   }

@@ -47,29 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB_Jvs3X8_zYPSBqCIP97MfjWc_jNlizlc',
-    appId: '1:763911878615:web:eae354a70e804a6ea07d92',
-    messagingSenderId: '763911878615',
-    projectId: 'avid-health-care',
-    authDomain: 'avid-health-care.firebaseapp.com',
-    storageBucket: 'avid-health-care.appspot.com',
-    measurementId: 'G-8B0ZVCYZBL',
+    apiKey: 'AIzaSyBBbOkPOpXOhTY4b8H-sE9J_G8I4LPNK50',
+    appId: '1:609491543675:web:3074680705028da6ebe4de',
+    messagingSenderId: '609491543675',
+    projectId: 'aviz-18397',
+    authDomain: 'aviz-18397.firebaseapp.com',
+    storageBucket: 'aviz-18397.appspot.com',
+    measurementId: 'G-6SBT8VXSFG',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBu3tT0UT2b9me7Qkbd80lBodmRbPIUq9w',
-    appId: '1:763911878615:android:0ff02d92e3abca5ca07d92',
-    messagingSenderId: '763911878615',
-    projectId: 'avid-health-care',
-    storageBucket: 'avid-health-care.appspot.com',
+    apiKey: 'AIzaSyBI0N_PgIHJnC5Qh1Oe1hLFOXk8AaePv4k',
+    appId: '1:609491543675:android:e48704b4c4849659ebe4de',
+    messagingSenderId: '609491543675',
+    projectId: 'aviz-18397',
+    storageBucket: 'aviz-18397.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBzv-dTMLHIb0y9VdU_K8oWGQKSkLw_fBc',
-    appId: '1:763911878615:ios:3f99eea10233f128a07d92',
-    messagingSenderId: '763911878615',
-    projectId: 'avid-health-care',
-    storageBucket: 'avid-health-care.appspot.com',
+    apiKey: 'AIzaSyBGGNhX1n2ggU5msM8ksg-KdVQNdrh0ZPc',
+    appId: '1:609491543675:ios:284ddc4aa69cbba0ebe4de',
+    messagingSenderId: '609491543675',
+    projectId: 'aviz-18397',
+    storageBucket: 'aviz-18397.appspot.com',
     iosBundleId: 'com.example.task1',
   );
 }

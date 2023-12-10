@@ -6,7 +6,8 @@ import 'package:task1/pages/search_page/widgets/community_banner.dart';
 import 'package:task1/pages/search_page/widgets/donor_ranking.dart';
 import 'package:task1/pages/search_page/widgets/header_row.dart';
 import 'package:task1/pages/search_page/widgets/single_tile_list_view_container.dart';
-import 'package:task1/pages/search_page/widgets/two_tile_list_view_container.dart';
+import 'package:task1/pages/search_page/widgets/two_tile_list_view_container1.dart';
+import 'package:task1/pages/search_page/widgets/two_tile_list_view_container2.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -22,15 +23,28 @@ class SearchView extends StatelessWidget {
           children: [
             HeaderRow(),
             SizedBox(
-              height: AppDimensions.verticalSpace1,
+              height: AppDimensions.verticalSpace3,
             ),
             postRequestAndBloodBank(),
             SizedBox(
-              height: AppDimensions.verticalSpace1,
+              height: AppDimensions.verticalSpace3,
             ),
-            TwoTileListView(),
-            SingleTileListView(),
+            NearbyDonors(),
+            SizedBox(
+              height: AppDimensions.verticalSpace3,
+            ),
+            DonationRequests(),
+            SizedBox(
+              height: AppDimensions.verticalSpace3,
+            ),
             CommunityBanner(),
+            SizedBox(
+              height: AppDimensions.verticalSpace3,
+            ),
+            BloodBanksList(),
+            SizedBox(
+              height: AppDimensions.verticalSpace3,
+            ),
             DonorRanking(),
           ],
         ),

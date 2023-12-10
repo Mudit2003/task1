@@ -39,6 +39,9 @@ class _DonorRankingState extends State<DonorRanking> {
               ],
             ),
           ),
+          SizedBox(
+            height: AppDimensions.verticalSpace1,
+          ),
           OnOfButton(
             buttonLabel: const [
               "Country",
@@ -55,6 +58,9 @@ class _DonorRankingState extends State<DonorRanking> {
                 personCard(AppDimensions.runnerupDonorRadius),
               ],
             ),
+          ),
+          SizedBox(
+            height: AppDimensions.verticalSpace1,
           ),
           InkWell(
             child: Container(
