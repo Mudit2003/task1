@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task1/common/utils/dimensions.dart';
 
 class RegularText extends StatelessWidget {
   final String text;

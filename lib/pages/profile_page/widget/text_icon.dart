@@ -17,8 +17,8 @@ class TextIcon extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: 56,
-          height: 56,
+          width: AppDimensions.circularContainerWidth2,
+          height: AppDimensions.circularContainerHeight2,
           decoration: ShapeDecoration(
             color: AppColors.redIconColor,
             shape: OvalBorder(),

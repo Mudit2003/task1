@@ -12,7 +12,7 @@ Row postRequestAndBloodBank() {
       ),
       IconTextButton(
         icon: CustomIcons.blood_bank,
-        text: "Post Request",
+        text: "Blood Bank",
       )
     ],
   );

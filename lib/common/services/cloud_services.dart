@@ -14,10 +14,9 @@ class CloudService {
 
   Future<Person> getUser({required String id}) async {
     return (await user
-            .where('uid', isEqualTo: id)
-            .get()
-            .then((value) => value.docs.map((e) => Person.fromJson(e))))
-        .first;
+        .doc(id)
+        .get()
+        .then((value) => Person.mapValues(value.data)));
   }
 
   Future<Iterable<Person>> getAllUser() async {

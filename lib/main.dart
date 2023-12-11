@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppRoutes.routes,
-      initialRoute: AppRoutes.getSearcForDonorsRoute(),
+      initialRoute: AppRoutes.getProfileRoute(),
       initialBinding: ControllerBinding(),
     );
   }

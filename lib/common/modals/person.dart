@@ -32,4 +32,14 @@ class Person {
         isAvailableForDonation = documentSnapshot.data()['donor'],
         image = "assets/images/person.jpeg",
         phoneNumber = documentSnapshot.data()['phone-number'];
+
+  Person.mapValues(documentSnapshot)
+      : name = documentSnapshot['name'],
+        date = documentSnapshot['dateofbirth'],
+        gender = documentSnapshot['gender'] ? "Male" : "Female",
+        bloodType = documentSnapshot['bloodgroup'],
+        location = '',
+        isAvailableForDonation = documentSnapshot['donor'],
+        image = "assets/images/person.jpeg",
+        phoneNumber = documentSnapshot['phone-number'];
 }

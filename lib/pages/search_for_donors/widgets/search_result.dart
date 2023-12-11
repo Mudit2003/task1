@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task1/common/modals/person.dart';
+import 'package:task1/common/services/cloud_services.dart';
 import 'package:task1/common/utils/colors.dart';
 import 'package:task1/common/utils/dimensions.dart';
 import 'package:task1/common/widgets/button_size_text.dart';
@@ -30,59 +32,71 @@ class SearchResult extends StatelessWidget {
           Container(
             width: AppDimensions.maxUsableWidth,
             height: AppDimensions.searchScrollViewHeight,
-            child: ListView.builder(
-              itemBuilder: (index, context) => Container(
-                height: AppDimensions.searchResultTileHeight,
-                width: AppDimensions.maxUsableWidth,
-                padding: AppDimensions.widgetPadding,
-                decoration: BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                  color: AppColors.greyTextColor2,
-                  width: AppDimensions.circularBorderWidth / 6,
-                ))),
-                // height: AppDimensions.singleTileContainerHeight,
-                child: Column(children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const ImageCircle(imageRadius: 45),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+            child: FutureBuilder(
+              future: CloudService().getAllUser(),
+              builder: (context, snapshot) {
+                final Iterable<Person> list = snapshot.data ?? [];
+                return ListView.builder(
+                  itemBuilder: (context, index) => Container(
+                    height: AppDimensions.searchResultTileHeight,
+                    width: AppDimensions.maxUsableWidth,
+                    padding: AppDimensions.widgetPadding,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: AppColors.greyTextColor2,
+                      width: AppDimensions.circularBorderWidth / 6,
+                    ))),
+                    // height: AppDimensions.singleTileContainerHeight,
+                    child: Column(children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Rahul Sen',
-                            style: TextStyle(
-                              color: AppColors.blackTextColor1,
-                              fontSize: AppDimensions.mediumTextSize,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w500,
-                            ),
+                          const ImageCircle(imageRadius: 45),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                list.elementAt(index).name,
+                                style: TextStyle(
+                                  color: AppColors.blackTextColor1,
+                                  fontSize: AppDimensions.mediumTextSize,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SmallText(
+                                text:
+                                    "${2023 - list.elementAt(index).date.toDate().year} years old",
+                              ),
+                              const LocationText(location: "Bandra Mumbai"),
+                            ],
                           ),
-                          const SmallText(text: "25 Years old"),
-                          const LocationText(location: "Bandra Mumbai"),
+                          Column(
+                            // crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Availability(
+                                  available: list
+                                      .elementAt(index)
+                                      .isAvailableForDonation),
+                              RegularText(
+                                size: AppDimensions.largeTextSize,
+                                text: list.elementAt(index).bloodType,
+                                color: AppColors.redIconColor,
+                              ),
+                            ],
+                          )
                         ],
                       ),
-                      Column(
-                        // crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Availability(available: false),
-                          RegularText(
-                            size: AppDimensions.largeTextSize,
-                            text: "AB+",
-                            color: AppColors.redIconColor,
-                          ),
-                        ],
-                      )
-                    ],
+                    ]),
                   ),
-                ]),
-              ),
-              itemCount: 6,
-              scrollDirection: Axis.vertical,
-              physics: AlwaysScrollableScrollPhysics(),
-              shrinkWrap: true,
+                  itemCount: list.length,
+                  scrollDirection: Axis.vertical,
+                  physics: AlwaysScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                );
+              },
             ),
           )
         ],
