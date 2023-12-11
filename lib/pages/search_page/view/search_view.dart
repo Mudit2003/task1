@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task1/common/utils/colors.dart';
 import 'package:task1/common/utils/dimensions.dart';
+import 'package:task1/common/widgets/navbar.dart';
 import 'package:task1/pages/search_page/components/search_view_components.dart';
 import 'package:task1/pages/search_page/widgets/community_banner.dart';
 import 'package:task1/pages/search_page/widgets/donor_ranking.dart';
@@ -49,6 +50,7 @@ class SearchView extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: CustomNavigationBar(),
     );
   }
 }
